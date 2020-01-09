@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/postedBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGrey"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/postTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/textBlack"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/postImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postedBy"
+        app:layout_constraintBottom_toTopOf="@+id/postContent"/>
+
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/postedBy" />
+
+    <TextView
+        android:id="@+id/postContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postImage"
+        app:layout_constraintBottom_toTopOf="@+id/upVote"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/upVote"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_arrow_up"
+        android:tint="@color/darkGrey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postContent" />
+
+    <TextView
+        android:id="@+id/votes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/upVote"
+        app:layout_constraintStart_toEndOf="@+id/upVote"
+        app:layout_constraintTop_toBottomOf="@+id/postContent" />
+
+    <ImageView
+        android:id="@+id/downVote"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:rotation="180"
+        android:src="@drawable/ic_arrow_up"
+        android:tint="@color/darkGrey"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/upVote"
+        app:layout_constraintStart_toEndOf="@+id/votes"
+        app:layout_constraintTop_toBottomOf="@+id/postContent" />
+
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_comment"
+        android:drawablePadding="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/upVote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postContent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_share"
+        android:drawablePadding="5dp"
+        android:text="Share"
+        app:layout_constraintBottom_toBottomOf="@+id/upVote"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/postContent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

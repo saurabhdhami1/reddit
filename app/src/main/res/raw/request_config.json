@@ -1,0 +1,230 @@
+{
+  "id": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+  "name": "reddit",
+  "description": "",
+  "auth": null,
+  "events": null,
+  "variables": [],
+  "order": [
+    "ee5fa6e9-1d64-401b-9cbc-f464118a0db5",
+    "278cfe28-1c1f-4914-9de5-a14a6fa419d2",
+    "59b73aea-ff3a-47d0-8ea9-2a2ffad85b03",
+    "818bd798-7e8d-4b18-8faa-9b336efdfed9",
+    "b6cd46e2-561f-4129-954c-5d97710b02c0"
+  ],
+  "folders_order": [],
+  "folders": [],
+  "requests": [
+    {
+      "id": "278cfe28-1c1f-4914-9de5-a14a6fa419d2",
+      "name": "Get post from a subredit",
+      "url": "https://oauth.reddit.com/r/Android/new",
+      "description": "",
+      "data": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "355169843007-K6afE6yrsUkDokb7jmW0xtC7zPk"
+          }
+        ]
+      },
+      "events": null,
+      "folder": null,
+      "currentHelper": "bearerAuth",
+      "helperAttributes": {
+        "id": "bearer",
+        "token": "355169843007-K6afE6yrsUkDokb7jmW0xtC7zPk"
+      },
+      "collectionId": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+      "pathVariables": [],
+      "dataOptions": null
+    },
+    {
+      "id": "59b73aea-ff3a-47d0-8ea9-2a2ffad85b03",
+      "name": "Get comments on a post",
+      "url": "https://oauth.reddit.com/r/Android/comments/dl0tmp",
+      "description": "",
+      "data": [],
+      "dataOptions": null,
+      "dataMode": "params",
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "355169843007-gaoi8sRXhVf1tNqdezM_0_KJY1U"
+          }
+        ]
+      },
+      "events": null,
+      "folder": null,
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "currentHelper": "bearerAuth",
+      "helperAttributes": {
+        "id": "bearer",
+        "token": "355169843007-gaoi8sRXhVf1tNqdezM_0_KJY1U"
+      },
+      "collectionId": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+      "pathVariables": []
+    },
+    {
+      "id": "818bd798-7e8d-4b18-8faa-9b336efdfed9",
+      "name": "vote on a post",
+      "url": "https://oauth.reddit.com/api/vote",
+      "description": "",
+      "data": [
+        {
+          "key": "id",
+          "value": "t3_dl0tmp",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "dir",
+          "value": "1",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "dataOptions": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "dataMode": "urlencoded",
+      "headerData": [
+        {
+          "key": "Content-Type",
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "description": "",
+          "type": "text"
+        }
+      ],
+      "method": "POST",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "355169843007-gaoi8sRXhVf1tNqdezM_0_KJY1U"
+          }
+        ]
+      },
+      "events": null,
+      "folder": null,
+      "currentHelper": "bearerAuth",
+      "helperAttributes": {
+        "id": "bearer",
+        "token": "355169843007-gaoi8sRXhVf1tNqdezM_0_KJY1U"
+      },
+      "collectionId": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+      "headers": "Content-Type: application/x-www-form-urlencoded\n",
+      "pathVariables": []
+    },
+    {
+      "id": "b6cd46e2-561f-4129-954c-5d97710b02c0",
+      "name": "Get popular posts",
+      "url": "https://oauth.reddit.com/subreddits/popular",
+      "description": "",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "355169843007-K6afE6yrsUkDokb7jmW0xtC7zPk"
+          }
+        ]
+      },
+      "events": null,
+      "folder": null,
+      "currentHelper": "bearerAuth",
+      "helperAttributes": {
+        "id": "bearer",
+        "token": "355169843007-K6afE6yrsUkDokb7jmW0xtC7zPk"
+      },
+      "collectionId": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+      "pathVariables": []
+    },
+    {
+      "id": "ee5fa6e9-1d64-401b-9cbc-f464118a0db5",
+      "name": "Get Access Token using OAuth",
+      "url": "https://www.reddit.com/api/v1/access_token?grant_type=password&username=vikasaroy&password=medley6one3",
+      "description": "",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "POST",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "grant_type",
+          "value": "password",
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "username",
+          "value": "vikasaroy",
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "password",
+          "value": "medley6one3",
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "basic": [
+          {
+            "key": "password",
+            "value": "9NwUSuG3IZf-pJKoQ-vp8oWAZqs"
+          },
+          {
+            "key": "username",
+            "value": "sG7WikFP8UbFlQ"
+          }
+        ]
+      },
+      "events": null,
+      "folder": null,
+      "currentHelper": "basicAuth",
+      "helperAttributes": {
+        "id": "basic",
+        "username": "sG7WikFP8UbFlQ",
+        "password": "9NwUSuG3IZf-pJKoQ-vp8oWAZqs"
+      },
+      "collectionId": "d353086c-574e-4e47-9dc1-60a1eca2f6fa",
+      "pathVariables": []
+    }
+  ],
+  "protocolProfileBehavior": []
+}
